@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&family=Kanit:wght@200;300;400;500;600;700;800;900&family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&family=Merriweather+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;700;800&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 2px;
+    outline: none
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* scroll bar */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+@media (max-width: 768px) {
+     ::-webkit-scrollbar {
+        width: 0px;
+    }
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #ddd;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.407);
+    border-radius: 10px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url(./images/background.jpg);
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.content {
+    position: relative;
+    z-index: 12;
+    overflow: hidden;
+}
+
+.content i {
+    font-size: 30px;
+    border: 1px solid;
+    border-radius: 50%;
+    padding: 20px;
+}
+
+.content .icon::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.content .icon::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 50px;
+    background-color: #fff;
+    bottom: -50px;
+    left: 50%;
+}
+
+.content .text {
+    opacity: 0;
+    animation: opacity 1s 2s both;
+}
+
+.content .text p {
+    font-size: 20px;
+    width: 260px;
+    overflow: hidden;
+    margin: 15px auto;
+    white-space: nowrap;
+    animation: opacity 1.5s 3s both, width-effect 1.5s steps(19) 3s;
+}
+
+@keyframes width-effect {
+    from {
+        width: 0;
+    }
+    to {
+        width: 260px;
+    }
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.list ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    padding: 0;
+}
+
+.list ul li {
+    border: 1px solid #fff;
+    padding: 10px 0;
+    width: 130px;
+    text-align: center;
+    transition: .5s;
+}
+
+.list ul li:hover {
+    background-color: rgba(255, 255, 255, 0.188);
+}
+
+@media (max-width:600px) {
+    .list ul {
+        flex-direction: column;
+        transform: translateX(-15px);
+        padding-left: 2rem;
+    }
+}
+
+.list::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.list::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 50px;
+    background-color: #fff;
+    top: -50px;
+    left: 50%;
+}
+
+.model {
+    z-index: 1212;
+}
+
+.modal-header h3 {
+    margin: 20px 0 0 47px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid;
+}
+
+.modal-content {
+    background-color: rgba(27, 31, 34, 0.85) !important;
+    color: #fff;
+}
+
+
+/* ///////////start about section/////////////// */
+
+#about p span {
+    background: #d6cfb7;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 3px 5px;
+    border-radius: 5px;
+    color: #000;
+}
+
+
+/* ///////////end about section/////////////// */
+
+
+/* ///////////start contact section/////////////// */
+
+#contact .modal-body form label {
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+#contact .modal-body form input,
+#contact .modal-body form textarea {
+    padding: 8px 12px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #fff;
+}
+
+#contact .modal-body form textarea {
+    width: 100%;
+    height: 150px;
+}
+
+#contact .modal-body form button {
+    padding: 10px 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: #fff;
+    color: #000;
+    font-size: 13px;
+    width: fit-content;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+#contact .modal-body form button:hover {
+    background: rgba(238, 238, 238, 0.7);
+}
+
+#contact .modal-body ul.social-icons li a {
+    color: #fff;
+    font-size: 20px;
+    border: 1px solid #fff;
+    padding: 5px 9px;
+    border-radius: 50%;
+}
+
+ul.social-icons li a:hover {
+    background: rgba(255, 255, 255, 0.236);
+}
+
+
+/* ///////////end contact section/////////////// */
+
+
+/* ///////////start work section/////////////// */
+
+#work .project .outer {
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 6px 6px 10px -6px rgb(0 0 0 / 15%), 0px 1px 10px -1px rgb(255 255 255 / 70%);
+}
+
+#work .project .inner {
+    height: 120px;
+    width: 120px;
+    color: #000;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    transition: .5s;
+}
+
+#work .project .inner:hover {
+    transform: scale(.9);
+}
+
+#work .project a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#work .project p span {
+    color: #e7e77bd4;
+    font-weight: 600;
+}
+
+
+/* ///////////end work section/////////////// */
+
+
+/* ///////////start skills section/////////////// */
+
+#skills .coding .skill h5 span {
+    float: right;
+    font-size: 12px;
+    font-weight: bold;
+    color: #d6cfb7;
+    border: 1px solid rgba(0, 0, 0, 0.314);
+    padding: 5px;
+    border-radius: 3px;
+}
+
+#skills .coding .skill .rang {
+    width: 100%;
+    background-color: rgba(119, 119, 119, 0.2);
+    height: 20px;
+    margin-top: 10px;
+    position: relative;
+}
+
+#skills .coding .skill .rang span {
+    background-color: #d6cfb7;
+    height: 100%;
+    position: absolute;
+    z-index: 11;
+    transition: 10s;
+}
+
+#skills .coding .skill h5,
+#skills .coding .skill .rang {
+    padding: 0;
+}
+
+#skills .language p {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+#skills .language ul li span {
+    padding: 0px 6px;
+    border-radius: 50%;
+    background-color: #d6cfb7;
+    border: 1px solid #d6cfb7;
+}
+
+#skills .language .english li:last-child span {
+    background: transparent;
+}
+
+
+/* ///////////end skills section/////////////// */
